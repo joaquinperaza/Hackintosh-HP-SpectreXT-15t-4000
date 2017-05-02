@@ -51,21 +51,17 @@ Hdmi fix:
 The plattform 0x01660004 dont have connectors, but is the onlyone compatible with our screen, so I patched the HEX table for you to make our screen compatible with 0x01660008 wich natively support our HDMI port.
 Just delete AppleIntelFramebufferCapri.kext from your System/Library/Estensions folder and immediately install the one inside kext folder/optional fixes with EasyKext Pro
 Then add this kextspatches in CloverConfigurator:
+
 | Name | Find | Replace | Plist checked? |
-
 | ------ | ------ | ------ | ------ |
-
 | AppleIntelFramebufferCapri | 04006601 01030101 00000002  | 04006601 01020402 00000004  | NO |
-
 | AppleIntelFramebufferCapri | 05030000 02000000 30020000 00000000 01000000 40000000 00000000 01000000 40000000 00000000 01000000 40000000 00000000 00000000 | 05030000 02000000 30020000 02050000 00080000 06000000 03040000 00040000 81000000 04060000 00040000 81000000 00000000 00020011 | NO |
-
 
 Wifi fix:
 Unfortunately our Intel Centrino N wifi card is not compatible i bought an Atheros AR9285 AR5B95, just replace and add install kexts inside Atheros AR9285 AR5B95 Sierra with EasyKext.
+
 | Name | Find | Replace | Plist checked? |
-
 | ------ | ------ | ------ | ------ |
-
 | AirPortAtheros40 | pci168c,30 | pci168c,2b | YES |
 
 ### Author Disclaimer:
