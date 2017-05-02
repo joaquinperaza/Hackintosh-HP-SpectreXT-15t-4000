@@ -1,0 +1,116 @@
+<<<<<<< HEAD
+
+# Hackintosh Spectre XT 15t-400 Touchsmart Sierra
+
+- I made this repo to collect all related info about this laptop.
+- I am not using other dsdt or ssdt patches than clover ones, but I am open to your contributions.
+
+### Where to start:
+Have a Mac? So prepare a USB using your preferred method, you can choose:
+- Clover
+- Unibeast (Base guide: https://www.tonymacx86.com/threads/unibeast-install-macos-sierra-on-any-supported-intel-based-pc.200564/)
+
+
+Dont have a mac? Dont worry you can use a virtual box machine in your HP:
+To set up the vm use: http://www.wikigain.com/install-macos-sierra-10-12-virtualbox/
+
+`I discovered and posted how to run unibeast in VirtualBox VM using Linux/Windows host:`
+https://www.reddit.com/r/hackintosh/comments/5zks4c/create_sierra_bootable_usb_from_virtualbox/
+
+I followed this guide that was the most similar to this model:
+https://www.google.com.uy/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiT2KW8v9HTAhWGIJAKHRtkAZIQFgggMAA&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fhackintosh%2Fcomments%2F5pwtdd%2Fhp_spectre_xt_pro_13b000_running_macos_sierra%2F&usg=AFQjCNEXuPraFVEtqD7am308-wVd7ssCZQ
+
+So I did it with unibeast, with this options:
+UEFI Mode and Inject Intel
+
+### USB installer tunning:
+
+- After completing the Unibeast installation donwload clover configurator and add the settings that appear in cloverconfIMG folder.
+- PD:You should also select -v (verbose) flag in boot section in first tests.
+- PD:Ignore ket patches for the moment
+- Copy the drivers inside the drivers64UEFI folder to your EFI/CLOVER/drivers64UEFI folder.
+- Copy the kexts from the kext folder to your EFI/CLOVER/kexts `EXCLUDE VoodooHDA inside kext/10.12 folder`.
+
+### Sierra install:
+Now you're ready to run Sierra installer (if you are lucky the only issue you would have is no mouse and keyboard during install).
+Follow normal instructions for install OSX.
+Key points:
+- Disable Secure boot in bios and disable legacy, enable cpu virtualization
+- Boot vith -v flags in first tests.
+
+### Post installation:
+Install those 'post install kext' with EasyKext Pro:
+- VoodooPS2Controller.kext (Enable mouse and keyboard)
+- USBInjectAll.kext (enable touchscreen and webcam)
+Dont install the optionals fixes yet.
+
+Reagarding audio i have tested to solution:
+- Apply AppleHDA patched kext (Inside other files folder) //No microphone
+- Use VoodooHDA installer and add the `VoodooHDA inside kext/10.12 folder` to clover.
+VoodooHDA provide microphone and beats audio but less quality and no volume.
+
+Hdmi fix:
+The plattform 0x01660004 dont have connectors, but is the onlyone compatible with our screen, so I patched the HEX table for you to make our screen compatible with 0x01660008 wich natively support our HDMI port.
+Just delete AppleIntelFramebufferCapri.kext from your System/Library/Estensions folder and immediately install the one inside kext folder/optional fixes with EasyKext Pro
+Then add this kextspatches in CloverConfigurator:
+| Name | Find | Replace | Plist checked? |
+| ------ | ------ | ------ | ------ |
+| AppleIntelFramebufferCapri | 04006601 01030101 00000002  | 04006601 01020402 00000004  | NO |
+| AppleIntelFramebufferCapri | 05030000 02000000 30020000 00000000 01000000 40000000 00000000 01000000 40000000 00000000 01000000 40000000 00000000 00000000 | 05030000 02000000 30020000 02050000 00080000 06000000 03040000 00040000 81000000 04060000 00040000 81000000 00000000 00020011 | NO |
+
+Wifi fix:
+Unfortunately our Intel Centrino N wifi card is not compatible i bought an Atheros AR9285 AR5B95, just replace and add install kexts inside Atheros AR9285 AR5B95 Sierra with EasyKext.
+| Name | Find | Replace | Plist checked? |
+| ------ | ------ | ------ | ------ |
+| AirPortAtheros40 | pci168c,30 | pci168c,2b | YES |
+
+### Author Disclaimer:
+The majority of the software is public on the internet, I only have patched some files and wrote this guide, I am not responsible of any possible damage to your PC, do it at your own risk despite I consider it worth it.
+If you have any question/issue/suggestion/collaboration please report it via issue tab I will look it immediately.
+=======
+
+# Hackintosh Spectre XT 15t-400 touchsmart Sierra
+
+- I made this repo to collect all related info about this laptop.
+- I am not using other dsdt or ssdt patches than clover ones, but I am open to your contributions.
+
+### Where to start:
+Have a Mac? So prepare a USB using your preferred method, you can choose:
+- Clover
+- Unibeast (Base guide: https://www.tonymacx86.com/threads/unibeast-install-macos-sierra-on-any-supported-intel-based-pc.200564/)
+Dont have a mac? Dont worry you can use a virtual box machine in your HP:
+To set up the vm use: http://www.wikigain.com/install-macos-sierra-10-12-virtualbox/
+`I discovered and posted run unibeastin VirtualBox VM:`https://www.reddit.com/r/hackintosh/comments/5zks4c/create_sierra_bootable_usb_from_virtualbox/
+
+I followed this guide that was the most similar to this model:
+https://www.google.com.uy/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiT2KW8v9HTAhWGIJAKHRtkAZIQFgggMAA&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fhackintosh%2Fcomments%2F5pwtdd%2Fhp_spectre_xt_pro_13b000_running_macos_sierra%2F&usg=AFQjCNEXuPraFVEtqD7am308-wVd7ssCZQ
+
+So I did it with unibeast, with this options:
+UEFI Mode and Inject Intel
+
+After completing the Unibeast installation donwload clover configurator and add the settings that appear in cloverconfIMG folder.
+The kext patches are the followings:
+| Name | Find | Replace | Plist checked?|
+| ------ | ------ | ------ | ------ |
+| AirPortAtheros40 | pci168c,30 | pci168c,2b | YES |
+| AppleIntelFramebufferCapri | 04006601 01030101 00000002  | 04006601 01020402 00000004  | NO |
+| AppleIntelFramebufferCapri | 05030000 02000000 30020000 00000000
+01000000 40000000 00000000 01000000
+40000000 00000000 01000000 40000000
+00000000 00000000  | 05030000 02000000 30020000 02050000
+00080000 06000000 03040000 00040000
+81000000 04060000 00040000 81000000
+00000000 00020011  | NO |
+
+
+
+
+
+
+
+### Kext to install:
+Ps2controller\
+Applehda\
+Atheros (auth and injector) first add kext patch in clover configurator\
+tme machine backup apps
+>>>>>>> parent of 25ffacc... New tale
