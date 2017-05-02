@@ -67,3 +67,5 @@ Unfortunately our Intel Centrino N wifi card is not compatible i bought an Ather
 ### Author Disclaimer:
 The majority of the software is public on the internet, I only have patched some files and wrote this guide, I am not responsible of any possible damage to your PC, do it at your own risk despite I consider it worth it.
 If you have any question/issue/suggestion/collaboration please report it via issue tab I will look it immediately.
+
+As i started from zero i know this guide will look chinese, but I would be glade to help you, just report the issue to clarify the unknown for future readers.
