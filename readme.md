@@ -42,8 +42,8 @@ Install those 'post install kext' with EasyKext Pro:
 - USBInjectAll.kext (enable touchscreen and webcam)
 Dont install the optionals fixes yet.
 
-Reagarding audio i have tested to solution:
-- Apply AppleHDA patched kext (Inside other files folder) //No microphone
+Reagarding audio i have tested two solution, choose one:
+- Apply AppleHDA patched kext with EasyKext (Inside other files folder) //No microphone
 - Use VoodooHDA installer and add the `VoodooHDA inside kext/10.12 folder` to clover.
 VoodooHDA provide microphone and beats audio but less quality and no volume.
 
@@ -58,7 +58,7 @@ Then add this kextspatches in CloverConfigurator:
 | AppleIntelFramebufferCapri | 05030000 02000000 30020000 00000000 01000000 40000000 00000000 01000000 40000000 00000000 01000000 40000000 00000000 00000000 | 05030000 02000000 30020000 02050000 00080000 06000000 03040000 00040000 81000000 04060000 00040000 81000000 00000000 00020011 | NO |
 
 Wifi fix:
-Unfortunately our Intel Centrino N wifi card is not compatible i bought an Atheros AR9285 AR5B95, just replace and add install kexts inside Atheros AR9285 AR5B95 Sierra with EasyKext.
+Unfortunately our Intel Centrino N wifi card is not compatible i bought an Atheros AR9285 AR5B95, just replace and add install kexts inside Other files/Atheros AR9285 AR5B95 Sierra with EasyKext.
 
 | Name | Find | Replace | Plist checked? |
 | ------ | ------ | ------ | ------ |
