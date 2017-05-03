@@ -46,6 +46,7 @@ Reagarding audio i have tested two solution, choose one:
 - Apply AppleHDA patched kext with EasyKext (Inside other files folder) //No microphone nor beats audio subwoofer
 - Use VoodooHDA installer and add the `VoodooHDA inside kext/10.12 folder` to clover.
 VoodooHDA provide microphone and beats audio but less quality ~~and no volume control~~.
+
 VoodooHDA volume workaround:
 - Download soundflower from this repo
 - Go to Audio Midi Setup in Utilities and create a new multi-output device
@@ -71,6 +72,9 @@ Unfortunately our Intel Centrino N wifi card is not compatible i bought an Ather
 | Name | Find | Replace | Plist checked? |
 | ------ | ------ | ------ | ------ |
 | AirPortAtheros40 | pci168c,30 | pci168c,2b | YES |
+### Discussions:
+Reddit post: https://www.reddit.com/r/hackintosh/comments/68ujlw/guide_for_installing_macos_sierra_on_hp_spectre/
+
 
 ### Author Disclaimer:
 The majority of the software is public on the internet, I only have patched some files and wrote this guide, I am not responsible of any possible damage to your PC, do it at your own risk despite I consider it worth it.
