@@ -43,9 +43,16 @@ Install those 'post install kext' with EasyKext Pro:
 Dont install the optionals fixes yet.
 
 Reagarding audio i have tested two solution, choose one:
-- Apply AppleHDA patched kext with EasyKext (Inside other files folder) //No microphone
+- Apply AppleHDA patched kext with EasyKext (Inside other files folder) //No microphone nor beats audio subwoofer
 - Use VoodooHDA installer and add the `VoodooHDA inside kext/10.12 folder` to clover.
-VoodooHDA provide microphone and beats audio but less quality and no volume.
+VoodooHDA provide microphone and beats audio but less quality ~~and no volume control~~.
+VoodooHDA volume workaround:
+- Download soundflower from this repo
+- Go to Audio Midi Setup in Utilities and create a new multi-output device
+- Check both speakers
+- Uncheck drift correction if it is automatically checked for you
+- Open soundflower and select the multi-output device with 2ch Soundflower, then select soundflower as output device
+- Go to 'Users and Groups' in system preferences, select 'login items', and add 'Soundflowerbed.app' to the list. It's located in the sound flower folder now in your Applications
 
 Hdmi fix:
 The plattform 0x01660004 dont have connectors, but is the onlyone compatible with our screen, so I patched the HEX table for you to make our screen compatible with 0x01660008 wich natively support our HDMI port.
