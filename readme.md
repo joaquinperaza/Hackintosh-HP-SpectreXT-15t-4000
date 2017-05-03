@@ -50,7 +50,8 @@ VoodooHDA provide microphone and beats audio but less quality and no volume.
 Hdmi fix:
 The plattform 0x01660004 dont have connectors, but is the onlyone compatible with our screen, so I patched the HEX table for you to make our screen compatible with 0x01660008 wich natively support our HDMI port.
 Just delete AppleIntelFramebufferCapri.kext from your System/Library/Estensions folder and immediately install the one inside kext folder/optional fixes with EasyKext Pro
-Then add this kextspatches in CloverConfigurator:
+Then add this kextspatches in CloverConfigurator and change 0x01660004 in graphic section to 0x01660008:
+
 
 | Name | Find | Replace | Plist checked? |
 | ------ | ------ | ------ | ------ |
