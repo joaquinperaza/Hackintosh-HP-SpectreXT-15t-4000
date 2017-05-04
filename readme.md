@@ -16,7 +16,7 @@ To set up the vm use: http://www.wikigain.com/install-macos-sierra-10-12-virtual
 https://www.reddit.com/r/hackintosh/comments/5zks4c/create_sierra_bootable_usb_from_virtualbox/
 
 I followed this guide that was the most similar to this model:
-https://www.google.com.uy/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiT2KW8v9HTAhWGIJAKHRtkAZIQFgggMAA&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fhackintosh%2Fcomments%2F5pwtdd%2Fhp_spectre_xt_pro_13b000_running_macos_sierra%2F&usg=AFQjCNEXuPraFVEtqD7am308-wVd7ssCZQ
+https://www.reddit.com/r/hackintosh/comments/5pwtdd/hp_spectre_xt_pro_13b000_running_macos_sierra/
 
 So I did it with unibeast, with this options:
 UEFI Mode and Inject Intel
@@ -42,7 +42,7 @@ Install those 'post install kext' with EasyKext Pro:
 - USBInjectAll.kext (enable touchscreen and webcam)
 Dont install the optionals fixes yet.
 
-Reagarding audio i have tested two solution, choose one:
+Reagarding audio I have tested two solution, choose one:
 - Apply AppleHDA patched kext with EasyKext (Inside other files folder) //No microphone nor beats audio subwoofer
 - Use VoodooHDA installer and add the `VoodooHDA inside kext/10.12 folder` to clover.
 VoodooHDA provide microphone and beats audio but less quality ~~and no volume control~~.
@@ -67,7 +67,7 @@ Then add this kextspatches in CloverConfigurator and change 0x01660004 in graphi
 | AppleIntelFramebufferCapri | 05030000 02000000 30020000 00000000 01000000 40000000 00000000 01000000 40000000 00000000 01000000 40000000 00000000 00000000 | 05030000 02000000 30020000 02050000 00080000 06000000 03040000 00040000 81000000 04060000 00040000 81000000 00000000 00020011 | NO |
 
 Wifi fix:
-Unfortunately our Intel Centrino N wifi card is not compatible i bought an Atheros AR9285 AR5B95, just replace and add install kexts inside Other files/Atheros AR9285 AR5B95 Sierra with EasyKext.
+Unfortunately our Intel Centrino N wifi card is not compatible I bought an Atheros AR9285 AR5B95, just replace and add install kexts inside Other files/Atheros AR9285 AR5B95 Sierra with EasyKext.
 
 | Name | Find | Replace | Plist checked? |
 | ------ | ------ | ------ | ------ |
@@ -80,4 +80,4 @@ Reddit post: https://www.reddit.com/r/hackintosh/comments/68ujlw/guide_for_insta
 The majority of the software is public on the internet, I only have patched some files and wrote this guide, I am not responsible of any possible damage to your PC, do it at your own risk despite I consider it worth it.
 If you have any question/issue/suggestion/collaboration please report it via issue tab I will look it immediately.
 
-As i started from zero i know this guide will look chinese, but I would be glade to help you, just report the issue to clarify the unknown for future readers.
+As I started from zero I know this guide will look chinese, but I would be glade to help you, just report the issue to clarify the unknown for future readers, also if you dont understand something tell me via reddit or an issue on GitHub.
