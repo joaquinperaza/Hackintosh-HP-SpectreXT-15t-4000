@@ -221,8 +221,7 @@
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
 		<string>MBP91.88Z.00D3.B00.1203211536</string>
-		<key>Board-ID</key>
-		<string>Mac-6F01561E16C75D06</string>
+		
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardType</key>
@@ -291,8 +290,7 @@ Hynix Semiconductor
 		<true/>
 		<key>ProductName</key>
 		<string>MacBookPro9,2</string>
-		<key>SerialNumber</key>
-		<string>C02LT27LDTY3</string>
+		
 		<key>Trust</key>
 		<false/>
 		<key>Version</key>
